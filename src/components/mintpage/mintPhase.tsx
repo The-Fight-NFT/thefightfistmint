@@ -308,6 +308,7 @@ const MintERC721 = () => {
             )}
           </div>
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
+            <span>WHITELISTED</span>
             <CountdownTimer
             startTimestamp={BigInt(allowlistPhase?.startTimestamp || 0)}  
             />

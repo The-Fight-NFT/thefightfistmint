@@ -14,7 +14,7 @@ import CustomConnectButton from "./connectWallet3rd";
 import { defineChain, getContract, toEther } from "thirdweb";
 import { base } from "thirdweb/chains";
 import background from "@/assets/TopBG.png";
-import nftPreview from "@/assets/The_Fight_NFT_preview.webp";
+import nftPreview from "@/assets/preview.webp";
 import {
   MediaRenderer,
   useActiveAccount,

@@ -298,7 +298,7 @@ const MintERC721 = () => {
         </Card>
         <div className="relative text-white gap-20 z-50 flex flex-col md:flex-row items-center md:justify-between py-10 space-y-4 md:space-y-0">
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
-            <span>PUBLIC</span>
+            <span>WHITELISTED</span>
             {publicPhaseActive ? (
               <span>ENDED</span>
             ) : (
@@ -308,7 +308,7 @@ const MintERC721 = () => {
             )}
           </div>
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
-            <span>WHITELISTED</span>
+            <span>PUBLIC</span>
             <CountdownTimer
               startTimestamp={BigInt(publicPhase?.startTimestamp || 0)}
             />

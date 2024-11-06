@@ -159,9 +159,9 @@ const MintERC721 = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="fixed top-4 right-4 z-50 md:pb-5">
+      {/* <div className="fixed top-4 right-4 z-50 md:pb-5">
         <CustomConnectButton />
-      </div>
+      </div> */}
       <div
         className="absolute inset-0 bg-cover bg-center contrast-200 brightness-50 saturate-200 overflow-hidden"
         style={{ backgroundImage: `url(${background.src})` }}
@@ -303,6 +303,8 @@ const MintERC721 = () => {
             </div>
           </div>
         </Card>
+
+        {/* COUNTDOWN */}
         <div className="relative text-white gap-20 z-50 flex flex-col md:flex-row items-center md:justify-between py-10 space-y-4 md:space-y-0">
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
             <span className="text-xs italic">PUBLIC</span>

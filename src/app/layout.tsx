@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
+import NavbarGreen from "@/components/mintpage/NavbarGreen";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThirdwebProvider>
+          <div className="absolute top-0 inset-x-0 z-50">
+            <NavbarGreen />
+          </div>
+          {children}
+        </ThirdwebProvider>
       </body>
     </html>
   );

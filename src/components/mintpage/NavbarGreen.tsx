@@ -19,9 +19,9 @@ import CustomConnectButton from "./connectWallet3rd";
 const navLinks = [
   { title: "HOME", path: "https://fightfist.io/" },
   { title: "FIGHT NFT", path: "https://mint.fightfist.io/" },
-  { title: "SWAP", path: "https://fightfist.io/comingsoon" },
-  { title: "STAKE", path: "https://fightfist.io/comingsoon" },
-  { title: "ART GALLERY", path: "https://fightfist.io/comingsoon" },
+  { title: "SWAP", path: "https://fightfist.io/coming-soon" },
+  { title: "STAKE", path: "https://fightfist.io/coming-soon" },
+  { title: "ART GALLERY", path: "https://fightfist.io/coming-soon" },
   { title: "WHITEPAPER", path: "https://fightfist.io/whitepaper" },
 ];
 

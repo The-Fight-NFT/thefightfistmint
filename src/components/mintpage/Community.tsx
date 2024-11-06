@@ -42,7 +42,7 @@ const Community = () => {
                 repeatDelay: 1,
               }}
             >
-              <Link href={community.path}>
+              <Link href={community.path} target="_blank">
                 <Image
                   src={community.img}
                   alt={community.title}

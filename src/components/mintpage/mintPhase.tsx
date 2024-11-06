@@ -131,6 +131,13 @@ const MintERC721 = () => {
   };
 
   const handleQuantityChange = (newQuantity: number) => {
+    const minQuantity = 1;
+
+    if (newQuantity < minQuantity) {
+      setQuantity(minQuantity);
+      return;
+    }
+
     if (allowlistPhaseActive && !publicPhaseActive) {
       // Restrict to maxEligibleQuantity during allowlist phase
       setQuantity(Math.min(newQuantity, maxEligibleQuantity));
@@ -138,7 +145,7 @@ const MintERC721 = () => {
       // No restriction during public phase
       setQuantity(newQuantity);
     }
-  };
+  };  
 
   const price = claimCondition?.pricePerToken
     ? parseInt(claimCondition.pricePerToken.toString())
@@ -298,20 +305,20 @@ const MintERC721 = () => {
         </Card>
         <div className="relative text-white gap-20 z-50 flex flex-col md:flex-row items-center md:justify-between py-10 space-y-4 md:space-y-0">
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
-            <span>PUBLIC</span>
-            {publicPhaseActive ? (
-              <span>ENDED</span>
-            ) : (
+            <span className="text-xs italic">PUBLIC</span>
+            <span className="text-xl font-semibold pt-3">
               <CountdownTimer
-              startTimestamp={BigInt(publicPhase?.startTimestamp || 0)}
+                startTimestamp={BigInt(publicPhase?.startTimestamp || 0)}
               />
-            )}
+            </span>
           </div>
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
-            <span>WHITELISTED</span>
-            <CountdownTimer
-            startTimestamp={BigInt(allowlistPhase?.startTimestamp || 0)}  
-            />
+            <span className="text-xs italic">WHITELIST</span>
+            <span className="text-xl font-semibold pt-3">
+              <CountdownTimer
+                startTimestamp={BigInt(allowlistPhase?.startTimestamp || 0)}
+              />
+            </span>
           </div>
         </div>
       </div>

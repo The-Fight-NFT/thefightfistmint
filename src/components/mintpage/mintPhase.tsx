@@ -145,7 +145,7 @@ const MintERC721 = () => {
       // No restriction during public phase
       setQuantity(newQuantity);
     }
-  };  
+  };
 
   const price = claimCondition?.pricePerToken
     ? parseInt(claimCondition.pricePerToken.toString())
@@ -309,17 +309,25 @@ const MintERC721 = () => {
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
             <span className="text-xs italic">PUBLIC</span>
             <span className="text-xl font-semibold pt-3">
-              <CountdownTimer
-                startTimestamp={BigInt(publicPhase?.startTimestamp || 0)}
-              />
+              {publicPhaseActive ? (
+                "ENDED"
+              ) : (
+                <CountdownTimer
+                  startTimestamp={BigInt(publicPhase?.startTimestamp || 0)}
+                />
+              )}
             </span>
           </div>
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
             <span className="text-xs italic">WHITELIST</span>
             <span className="text-xl font-semibold pt-3">
-              <CountdownTimer
-                startTimestamp={BigInt(allowlistPhase?.startTimestamp || 0)}
-              />
+              {allowlistPhaseActive ? (
+                <CountdownTimer
+                  startTimestamp={BigInt(allowlistPhase?.startTimestamp || 0)}
+                />
+              ) : (
+                "ENDED"
+              )}
             </span>
           </div>
         </div>

@@ -31,6 +31,7 @@ import {
 import { getContractMetadata } from "thirdweb/extensions/common";
 import { client } from "@/app/client";
 import CountdownTimer from "./countdown";
+import Link from "next/link";
 
 // Helper function to hash an address using keccak256 with arrayified input
 function hashAddress(address: string): Buffer {
@@ -198,8 +199,8 @@ const MintERC721 = () => {
               <CardDescription className="text-sm">
                 {contractMetadata?.description}
               </CardDescription>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-5">
+              <CardContent className="flex justify-center items-center py-10">
+                {/* <div className="grid grid-cols-2 gap-5">
                   <div id="blockchain">
                     <div className="text-slate-400 font-bold text-sm">
                       BLOCKCHAIN
@@ -233,11 +234,25 @@ const MintERC721 = () => {
                       )}
                     </div>
                   </div>
+                </div> */}
+                <div className="flex flex-col justify-center items-center">
+                  <div className="text-3xl font-bold py-2">MINT ENDED</div>
+                  <div className="py-2 italic">you can trade Fight NFTS on</div>
+                  <div className="py-2">
+                    <Link
+                      href={"https://opensea.io/collection/the-fight-nft"}
+                      target="_blank"
+                    >
+                      <span className="hover:text-blue-500 text-xl font-bold">
+                        OpenSea
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </CardContent>
 
               {/* Eligibility Message */}
-              {account?.address &&
+              {/* {account?.address &&
                 allowlistPhaseActive &&
                 !publicPhaseActive && (
                   <div className="text-center text-sm font-bold">
@@ -252,10 +267,10 @@ const MintERC721 = () => {
                       </span>
                     )}
                   </div>
-                )}
+                )} */}
 
               {/* Claim Button */}
-              <div className="flex flex-col md:flex-row items-center gap-4">
+              {/* <div className="flex flex-col md:flex-row items-center gap-4">
                 <div
                   id="quantity-button"
                   className="flex flex-row items-center justify-center"
@@ -299,13 +314,13 @@ const MintERC721 = () => {
                     {`Claim NFT (${getPrice(quantity)} ETH)`}
                   </TransactionButton>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </Card>
 
         {/* COUNTDOWN */}
-        <div className="relative text-white gap-20 z-50 flex flex-col md:flex-row items-center md:justify-between py-10 space-y-4 md:space-y-0">
+        {/* <div className="relative text-white gap-20 z-50 flex flex-col md:flex-row items-center md:justify-between py-10 space-y-4 md:space-y-0">
           <div className="flex flex-col items-center space-x-2 border border-white rounded-xl bg-black/60 px-10 py-5">
             <span className="text-xs italic">PUBLIC</span>
             <span className="text-xl font-semibold pt-3">
@@ -330,7 +345,7 @@ const MintERC721 = () => {
               )}
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
